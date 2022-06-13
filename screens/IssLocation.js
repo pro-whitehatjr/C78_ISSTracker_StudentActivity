@@ -73,6 +73,12 @@ export default class IssLocationScreen extends Component {
                                 </Marker>
                             </MapView>
                         </View>
+                   <View style = {styles.infoContainer}>
+                       <Text style = {styles.infoText}>latitude:{this.state.location.latitude}</Text>
+                       <Text style = {styles.infoText}>longitude:{this.state.location.longitude}</Text>
+                       <Text style = {styles.infoText}>altitude(km):{this.state.location.altitude}</Text>
+                       <Text style = {styles.infoText}>velocity(km/h):{this.state.location.velocity}</Text>
+                          </View>
                     </ImageBackground>
                 </View>
             )
@@ -107,5 +113,18 @@ const styles = StyleSheet.create({
     map: {
         width: "100%",
         height: "100%"
+    },
+    infoContainer: {
+        flex:0.2,
+        backgroundColor:"white",
+        marginTop:-10,
+        borderTopLeftRadius:30,
+        borderTopRightRadius:30,
+        padding:30
+    },
+    infoText:{
+        fontSize:15,
+        color:"black",
+        fontWeight:"bold"
     }
 })
